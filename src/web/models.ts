@@ -1,3 +1,4 @@
+import { Chart } from "chart.js";
 
 function evaluateWord(): void {
   const WORD_TO_EVAL: HTMLInputElement = document.getElementById("word")! as HTMLInputElement;
@@ -24,6 +25,17 @@ function evaluateWord(): void {
 
 function main(): void {
   const BUTTON: HTMLButtonElement = document.getElementById("evaluate")! as HTMLButtonElement;
+  const CANVAS: HTMLCanvasElement = document.getElementById("")! as HTMLCanvasElement;
+  const RESULT_CHART: Chart = new Chart(CANVAS, {
+    type: "bar",
+    data: {
+      labels: ["Sadness", "Joy", "Love", "Anger", "Fear", "Surprise"],
+      datasets: [{
+        label: "Results of the query",
+        data: [0, 0, 0, 0]
+      }]
+    }
+  });
   BUTTON.addEventListener("click", () => evaluateWord());
   // Get button
   // Add onClick event -> Function for the event callback

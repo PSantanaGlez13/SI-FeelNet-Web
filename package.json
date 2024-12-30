@@ -9,6 +9,9 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.4.7"
+  },
   "devDependencies": {
     "typescript": "^5.7.2"
   }
