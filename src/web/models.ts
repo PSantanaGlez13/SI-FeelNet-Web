@@ -1,6 +1,6 @@
-import { Chart } from "chart.js";
+import Chart from "chart.js/auto";
 
-function evaluateWord(): void {
+function evaluateWord(resultChart: Chart): void {
   const WORD_TO_EVAL: HTMLInputElement = document.getElementById("word")! as HTMLInputElement;
   const WORD_CONTENT: string = WORD_TO_EVAL.value;
   if (WORD_CONTENT.match(/^\s*$/)) {
@@ -25,18 +25,18 @@ function evaluateWord(): void {
 
 function main(): void {
   const BUTTON: HTMLButtonElement = document.getElementById("evaluate")! as HTMLButtonElement;
-  const CANVAS: HTMLCanvasElement = document.getElementById("")! as HTMLCanvasElement;
+  const CANVAS: HTMLCanvasElement = document.getElementById("result-chart")! as HTMLCanvasElement;
   const RESULT_CHART: Chart = new Chart(CANVAS, {
     type: "bar",
     data: {
       labels: ["Sadness", "Joy", "Love", "Anger", "Fear", "Surprise"],
       datasets: [{
-        label: "Results of the query",
-        data: [0, 0, 0, 0]
+        label: "Result of the query",
+        data: [5, 3, 2, 4, 0, 1]
       }]
     }
   });
-  BUTTON.addEventListener("click", () => evaluateWord());
+  BUTTON.addEventListener("click", () => evaluateWord(RESULT_CHART));
   // Get button
   // Add onClick event -> Function for the event callback
   // Construct query with the values of the "word" and "models"

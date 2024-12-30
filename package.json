@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc src/web/models.ts"
+    "build": "npx tsc && browserify src/web/models.js -o src/web/models.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browserify": "^17.0.1",
     "chart.js": "^4.4.7"
   },
   "devDependencies": {
