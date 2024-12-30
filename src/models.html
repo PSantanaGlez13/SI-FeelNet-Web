@@ -4,18 +4,26 @@
     Feelnet Models
   </title>
   <link rel="stylesheet" href="web/styles2.css">
+  <script defer src="web/models.js"></script>
 </head>
 <body>
   <div id="main-block">
       <div id="input-block">
-        <label for="models">Select a model to use:</label>
-        <select name="models" id="models">
-          <option value="model_a">Model A</option>
-          <option value="model_b">Model B</option>
-          <option value="model_c">Model C</option>
-        </select>
-        <label for="word">Write a word to evaluate</label>
-        <input type="text" id="word" name="word">
+        <div>
+          <label for="models">Select a model to use:</label><br>
+          <select name="models" id="models">
+            <option value="model_a">Model A</option>
+            <option value="model_b">Model B</option>
+            <option value="model_c">Model C</option>
+          </select><br><br>
+        </div>
+        <div>
+          <label for="word">Write a word to evaluate:</label><br>
+          <input type="text" id="word" name="word"><br><br>
+        </div>
+        <div>
+          <button id="evaluate">Evaluate</button>
+        </div>
       </div>
       <div id="result-block">
         

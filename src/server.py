@@ -8,6 +8,12 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
   def do_GET(self):
     if self.path == "/":
       self.path = "/index.html"
+    elif self.path.startswith("/model="):
+      (file, response) = self.parse_model_request()
+      self.send_response(response)
+      self.end_headers()
+      self.wfile.write(bytes(file, "utf-8"))
+      return
     try:
       file = open(self.path[1:]).read()
       self.send_response(200)
@@ -16,6 +22,20 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
       self.send_response(404)
     self.end_headers()
     self.wfile.write(bytes(file, "utf-8"))
+
+  def parse_model_request(self):
+    try:
+      #print(self.path)
+      [model, word] = self.path.split("&&")
+      selected_model = model.split("=")[1]
+      #print(selected_model)
+      selected_word = word.split("=")[1]
+      #print(selected_word)
+      # TODO: Run the selected model with the selected word
+      results = "Worked!"
+      return results, 200
+    except:
+      return "Could not fulfill the request", 404
 
 class ServerApp(http.server.HTTPServer):
   def __init__(self, address, request_handler):

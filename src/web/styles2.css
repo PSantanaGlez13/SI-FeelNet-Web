@@ -25,8 +25,16 @@ h3 {
   display: flexbox;
   flex-direction: column;
   justify-content: center;
-  padding: 20vh;
+  padding: 5vh;
+  height: 50vh;
   background-color: white;
+}
+
+#input-block {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
 }
 
 #description {
@@ -34,10 +42,6 @@ h3 {
   padding-left: 10vw;
 }
 
-.head-content {
-  display: flex;
-  justify-content: center;
-}
 
 button {
   background-color: #20B2AA;
@@ -47,8 +51,6 @@ button {
   border-radius: 4px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   border-color: #5F9EA0;
-  margin-left: 10vw;
-  margin-right: 10vw;
 }
 
 p {
