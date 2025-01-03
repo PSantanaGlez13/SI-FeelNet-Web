@@ -12,9 +12,10 @@ function evaluateWord(resultChart: Chart): void {
   const QUERY_URL: string = `model=${MODEL_TEXT}&&word=${WORD_CONTENT}`;
   console.log("Trying to fulfill the request: ", QUERY_URL);
   fetch(QUERY_URL)
-    .then(() => {
+    .then(async (response) => {
       // Do smth with the result.
-      console.log("Request fulfilled!");
+      const TEXT = await response.text();
+      console.log("Request fulfilled!", TEXT);
     })
     .catch(() => {
       // Do smth with the error.

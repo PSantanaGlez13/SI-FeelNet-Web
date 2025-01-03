@@ -1,4 +1,6 @@
 import http.server
+import sys
+from models_register import *
 
 class RequestHandler(http.server.BaseHTTPRequestHandler):
   def __init__(self, request, client_address, server_class):
@@ -31,11 +33,11 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
       #print(selected_model)
       selected_word = word.split("=")[1]
       #print(selected_word)
-      # TODO: Run the selected model with the selected word
-      results = "Worked!"
+      results = evaluate_model(selected_model, selected_word)
+      #results = "Worked!"
       return results, 200
-    except:
-      return "Could not fulfill the request", 404
+    except ValueError:
+      return sys.exception().args[0], 404
 
 class ServerApp(http.server.HTTPServer):
   def __init__(self, address, request_handler):
