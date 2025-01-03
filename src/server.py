@@ -16,6 +16,12 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
       self.end_headers()
       self.wfile.write(bytes(file, "utf-8"))
       return
+    elif self.path.endswith(".png"):
+      file = open(self.path[1:], "rb").read()
+      self.send_response(200)
+      self.end_headers()
+      self.wfile.write(file)
+      return
     try:
       file = open(self.path[1:]).read()
       self.send_response(200)
