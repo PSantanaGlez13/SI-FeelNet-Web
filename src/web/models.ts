@@ -1,10 +1,11 @@
 import Chart from "chart.js/auto";
+import { showEmptyWordMessage } from "./error-messages";
 
 function evaluateWord(resultChart: Chart): void {
   const WORD_TO_EVAL: HTMLInputElement = document.getElementById("word")! as HTMLInputElement;
   const WORD_CONTENT: string = WORD_TO_EVAL.value;
   if (WORD_CONTENT.match(/^\s*$/)) {
-    // CALL ERROR FUNCTION!
+    showEmptyWordMessage();
     return;
   }
   const MODEL_TO_EVAL: HTMLInputElement = document.getElementById("models")! as HTMLInputElement;

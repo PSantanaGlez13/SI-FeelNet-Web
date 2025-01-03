@@ -54,6 +54,27 @@ body {
   color: white;
 }
 
+.incorrect {
+  border-color: red;
+  border-width: 2px;
+  border-style: dashed;
+}
+
+#error-icon {
+  display: inline-block;
+  color: red;
+  margin-left: 5px;
+  width: fit-content;
+}
+
+#error-icon p {
+  display: inline-block;
+  width: fit-content;
+  margin-left: 5px;
+}
+
+
+
 button {
   background-color: #20B2AA;
   color: white;
