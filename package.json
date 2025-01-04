@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc && browserify src/web/models.js -o src/web/models.js"
+    "build": "npx tsc && browserify src/web/models.js -o src/web/models.js",
+    "deploy": "npm run build && cd src && sudo python3 server.py"
   },
   "author": "",
   "license": "ISC",

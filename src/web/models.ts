@@ -1,5 +1,7 @@
 import Chart from "chart.js/auto";
 import { showEmptyWordMessage } from "./error-messages";
+import { Loader } from "./loader";
+import { resizeElementToMax } from "./dynamic-resizer";
 
 function evaluateWord(resultChart: Chart): void {
   const WORD_TO_EVAL: HTMLInputElement = document.getElementById("word")! as HTMLInputElement;
@@ -15,6 +17,9 @@ function evaluateWord(resultChart: Chart): void {
   fetch(QUERY_URL)
     .then(async (response) => {
       // Do smth with the result.
+      resultChart.destroy();
+      const LOADER = new Loader("Im doing stuff", "result-chart");
+      LOADER.startAnimation();
       const TEXT = await response.text();
       console.log("Request fulfilled!", TEXT);
     })
@@ -28,7 +33,7 @@ function evaluateWord(resultChart: Chart): void {
 function main(): void {
   const BUTTON: HTMLButtonElement = document.getElementById("evaluate")! as HTMLButtonElement;
   const CANVAS: HTMLCanvasElement = document.getElementById("result-chart")! as HTMLCanvasElement;
-  const RESULT_CHART: Chart = new Chart(CANVAS, {
+  let resultChart: Chart = new Chart(CANVAS, {
     type: "bar",
     data: {
       labels: ["Sadness", "Joy", "Love", "Anger", "Fear", "Surprise"],
@@ -38,7 +43,9 @@ function main(): void {
       }]
     }
   });
-  BUTTON.addEventListener("click", () => evaluateWord(RESULT_CHART));
+  resizeElementToMax(CANVAS);
+  window.addEventListener("resize", () => resizeElementToMax(CANVAS));
+  BUTTON.addEventListener("click", () => evaluateWord(resultChart));
   // Get button
   // Add onClick event -> Function for the event callback
   // Construct query with the values of the "word" and "models"
