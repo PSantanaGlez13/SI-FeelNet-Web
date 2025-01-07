@@ -25,4 +25,4 @@ def run(word, limit = 5):
   def get_body(comment_object):
     return comment_object.body
   
-  return map(get_body, comments)
+  return [body for body in map(get_body, comments)]

@@ -21,7 +21,16 @@ sentimental_lables = [
 def evaluate_model(chosen_model, input):
   if chosen_model in MODEL_HASH:
     comments = scraping.run(input)
-    counts = MODEL_HASH[chosen_model](comments)
+    log_file = open("../log/" + input + ".json", "w")
+    counts, log_data_commentaries, log_data_labels = MODEL_HASH[chosen_model](comments)
+    log_json = []
+    #print(log_data_commentaries)
+    #print(log_data_labels)
+    log_data = zip(log_data_commentaries, log_data_labels)
+    for commentary, label in log_data:
+      log_json.append({"commentary": commentary, "label": label})
+    json.dump(log_json, log_file)
+    log_file.close()
     labels = [str(key) for key in counts.keys()]
     counts = [int(value) for value in counts.values()]
     return json.dumps({"labels": labels, "counts": counts})
@@ -57,8 +66,8 @@ def get_hugging_face_use_function(model_path, tokenizer_path):
 
     for prediction in predictions_labeled:
       counts[prediction] += 1
-
-    return counts
+    # The second and third are data for logging.
+    return counts, input, predictions_labeled
 
   return use_hugging_face
 
