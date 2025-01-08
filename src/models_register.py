@@ -72,3 +72,4 @@ def get_hugging_face_use_function(model_path, tokenizer_path):
   return use_hugging_face
 
 MODEL_HASH["roberta-3"] = get_hugging_face_use_function("models/roberta_3_finetuned_model", "models/roberta_3_finetuned_model")
+MODEL_HASH["roberta-1"] = get_hugging_face_use_function("models/roberta_1_augmented-weights_finetuned_model", "models/roberta_1_augmented-weights_finetuned_model")
