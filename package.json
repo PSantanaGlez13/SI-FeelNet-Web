@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc && browserify src/web/models.js -o src/web/models.js",
-    "deploy": "bash .env/bin/activate npm run build && cd src && sudo ../.env/bin/python3 server.py"  
+    "deploy": "bash .env/bin/activate && npm run build && cd src && sudo ../.env/bin/python3 server.py"  
   },
   "author": "",
   "license": "ISC",
