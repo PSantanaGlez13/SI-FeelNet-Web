@@ -22,7 +22,8 @@ El proyecto usa la API de Reddit para acceder a las publicaciones y a los coment
 Los modelos no vienen incluidos en el repositorio debido al límite de tamaño de fichero de GitHub.
 
 ### Modelos
-Incluir todos los ficheros del siguiente enlace en `src/models` (será necesario crear el directorio)
+Incluir todos los ficheros del siguiente enlace en `src/models` (será necesario crear el directorio):
+[Carpeta en Google Drive con los ficheros para models](https://drive.google.com/drive/folders/15Itf7iR5G4QY2l2gt71rx6vnedesO8Aq?usp=sharing)
 
 ### Reddit API
 Hay que conseguir un client ID y un client secret de la API de Reddit, registrando una aplicación. Crear el fichero `src/.secrets` e incluir siguiendo el siguiente formato:
