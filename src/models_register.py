@@ -3,12 +3,16 @@ import tensorflow as tf
 import pandas as pd
 import scraping
 import json
+import pickle as pkl
+import dill as dl
+from sklearn.linear_model import LogisticRegression
+from sklearn.feature_extraction.text import TfidfVectorizer
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 from datasets import Dataset, DatasetDict
 
 MODEL_HASH = dict()
 
-sentimental_lables = [
+sentimental_labels = [
     'anger',
     'disgust',
     'fear',
@@ -59,9 +63,9 @@ def get_hugging_face_use_function(model_path, tokenizer_path):
     input_features = {key: tf.constant(tokenized_datasets[key]) for key in reloaded_tokenizer.model_input_names}
     predictions = reloaded_model.predict(input_features)
     max_indexs = tf.argmax(predictions.logits, axis=1)
-    predictions_labeled = [sentimental_lables[index] for index in max_indexs]
+    predictions_labeled = [sentimental_labels[index] for index in max_indexs]
     counts = dict()
-    for label in sentimental_lables:
+    for label in sentimental_labels:
       counts[label] = 0
 
     for prediction in predictions_labeled:
@@ -71,5 +75,29 @@ def get_hugging_face_use_function(model_path, tokenizer_path):
 
   return use_hugging_face
 
+def use_regression_function(input):
+  file = open("models/regression.pkl", "rb")
+  reloaded_model: LogisticRegression = pkl.load(file)
+  file.close()
+  file = open("models/vectorizer.pkl", "rb")
+  def custom_tokenizer(text):
+    # Split the text by spaces, treating each space-separated part as a word
+    return text.split(' ')
+  vectorizer = dl.load(file)
+
+  file.close()
+  input_vectorized = vectorizer.transform(input)
+  predictions = reloaded_model.predict(input_vectorized)
+  predictions_labeled = [sentimental_labels[int(prediction)] for prediction in predictions]
+  counts = dict()
+  for label in sentimental_labels:
+    counts[label] = 0
+
+  for prediction in predictions_labeled:
+    counts[prediction] += 1
+  # The second and third are data for logging.
+  return counts, input, predictions_labeled
+
 MODEL_HASH["roberta-3"] = get_hugging_face_use_function("models/roberta_3_finetuned_model", "models/roberta_3_finetuned_model")
 MODEL_HASH["roberta-1"] = get_hugging_face_use_function("models/roberta_1_augmented-weights_finetuned_model", "models/roberta_1_augmented-weights_finetuned_model")
+MODEL_HASH["regression"] = use_regression_function
