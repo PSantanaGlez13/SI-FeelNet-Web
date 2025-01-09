@@ -38,7 +38,9 @@ function getChart(canvas: HTMLCanvasElement, data: DataChart | null = null): Cha
   });
 }
 
-function evaluateWord(resultChart: Chart, canvas: HTMLCanvasElement): void {
+let resultChart: Chart | undefined;
+
+function evaluateWord(canvas: HTMLCanvasElement): void {
   const WORD_TO_EVAL: HTMLInputElement = document.getElementById("word")! as HTMLInputElement;
   const WORD_CONTENT: string = WORD_TO_EVAL.value;
   if (WORD_CONTENT.match(/^\s*$/)) {
@@ -49,8 +51,8 @@ function evaluateWord(resultChart: Chart, canvas: HTMLCanvasElement): void {
   const MODEL_TEXT: string = MODEL_TO_EVAL.value;
   const QUERY_URL: string = `model=${MODEL_TEXT}&&word=${WORD_CONTENT}`;
   console.log("Trying to fulfill the request: ", QUERY_URL);
-  resultChart.destroy();
-  const LOADER = new Loader("Scraping and evaluating with the model", "result-chart");
+  resultChart!.destroy();
+  const LOADER = new Loader("", "result-chart");
   LOADER.startAnimation();
   fetch(QUERY_URL)
     .then(async (response) => {
@@ -75,10 +77,10 @@ function evaluateWord(resultChart: Chart, canvas: HTMLCanvasElement): void {
 function main(): void {
   const BUTTON: HTMLButtonElement = document.getElementById("evaluate")! as HTMLButtonElement;
   const CANVAS: HTMLCanvasElement = document.getElementById("result-chart")! as HTMLCanvasElement;
-  let resultChart: Chart = getChart(CANVAS);
+  resultChart = getChart(CANVAS);
   resizeElementToMax(CANVAS);
   window.addEventListener("resize", () => resizeElementToMax(CANVAS));
-  BUTTON.addEventListener("click", () => evaluateWord(resultChart, CANVAS));
+  BUTTON.addEventListener("click", () => evaluateWord(CANVAS));
   // Get button
   // Add onClick event -> Function for the event callback
   // Construct query with the values of the "word" and "models"
