@@ -21,3 +21,19 @@ El proyecto usa la API de Reddit para acceder a las publicaciones y a los coment
 
 Los modelos no vienen incluidos en el repositorio debido al límite de tamaño de fichero de GitHub.
 
+### Modelos
+Incluir todos los ficheros del siguiente enlace en `src/models` (será necesario crear el directorio)
+
+### Reddit API
+Hay que conseguir un client ID y un client secret de la API de Reddit, registrando una aplicación. Crear el fichero `src/.secrets` e incluir siguiendo el siguiente formato:
+```
+client_id=valor
+client_secret=valor
+```
+
+## Estructura del repositorio
+- `src`. Código fuente del servidor y `HTML` de la página.
+- `src/web`. Imágenes y ficheros `CSS` y `TS` de la página.
+- `env-setup.sh`. Script para instalar dependencias y el entorno de ejecución del servidor.
+- `notebooks`. Cuadernos Jupyter de los modelos desarrollados.
+- `datasets`. Dataset utilizado.
