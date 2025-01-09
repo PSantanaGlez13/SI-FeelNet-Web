@@ -1,0 +1,3 @@
+# Obtención Dataset
+
+Se emplea como base los dataset de GoEmotions ([https://github.com/google-research/google-research/tree/master/goemotions](https://github.com/google-research/google-research/tree/master/goemotions)). Se utiliza el script de "crear_dataset.py", que simplifica los datos para considerar solo 7 categorías (emociones de ekman + neutral) para construir un dataset con los datos de ```train.tsv``` y ```test.tsv```, que se combinan en un solo fichero, ```raw_dataset.csv```.
