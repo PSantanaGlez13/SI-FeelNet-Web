@@ -1,4 +1,5 @@
 # Sistemas Inteligentes - Feelnet
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/blob/main/README.md)
 ## Curso 2024-2025 ULL
 ## Creado por:
 - Pablo Santana González ([@PSantanaGlez13](https://github.com/PSantanaGlez13))
