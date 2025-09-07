@@ -1,8 +1,7 @@
-# Feelnet
-[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/main/README.md)
-[![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/main/README.es.md)
-
 # Intelligent Systems - Feelnet
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/blob/main/README.md)
+[![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/blob/main/README.es.md)
+
 ## 2024-2025 ULL Course
 ## Created by:
 - Pablo Santana González ([@PSantanaGlez13](https://github.com/PSantanaGlez13))
