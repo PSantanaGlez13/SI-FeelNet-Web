@@ -2,7 +2,7 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/blob/main/README.md)
 [![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/blob/main/README.es.md)
 
-## 2024-2025 academic year- ULL
+## 2024-2025 Academic Year ~ ULL
 ## Created by:
 - Pablo Santana González ([@PSantanaGlez13](https://github.com/PSantanaGlez13))
 - Hugo Hernández Martín ([@hugohdezm03](https://github.com/hugohdezm03))
@@ -43,6 +43,7 @@ You need to get a `client ID` and a `client secret` from the Reddit API by regis
 ├── log/                  # Outputs will be generated here
 │
 ├── env-setup.sh          # Script to install dependencies and configure environment
+├── package.json          # Node.js project configuration & dependencies
 ├── .gitignore            # Git ignore rules
 └── README.md             # Project documentation
 ```
