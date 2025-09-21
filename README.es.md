@@ -6,7 +6,7 @@
 - Hugo Hernández Martín ([@hugohdezm03](https://github.com/hugohdezm03))
 - José Ramón Morera Campos ([@jose-r-morera](https://github.com/jose-r-morera))
 ## Descripción
-Feelnet es una aplicación web que analiza los sentimientos de los usuarios de redes sociales (por el momento Reddit) a partir de una frase. Se puede escoger un modelo entre varias opciones para clasificar los comentarios en estas redes sociales.
+FeelNet es una aplicación web que analiza los sentimientos de los usuarios de redes sociales (por el momento Reddit) a partir de una frase. Se puede escoger un modelo entre varias opciones para clasificar los comentarios en estas redes sociales.
 
 Se trata del proyecto final de la asignatura de Sistemas Inteligentes, en cuarto año del Grado en Ingeniería Informática de la ULL, Itinerario de Computación.
 
@@ -34,8 +34,20 @@ client_secret=valor
 ```
 
 ## Estructura del repositorio
-- `src`. Código fuente del servidor y `HTML` de la página.
-- `src/web`. Imágenes y ficheros `CSS` y `TS` de la página.
-- `env-setup.sh`. Script para instalar dependencias y el entorno de ejecución del servidor.
-- `notebooks`. Cuadernos Jupyter de los modelos desarrollados.
-- `datasets`. Dataset utilizado.
+```text
+.
+├── src/                  # Código fuente del servidor y páginas HTML   
+│   └── web/              # Archivos estáticos para la página web (img y ts)
+│   └── models/           # Modelos usados para inferencia. No se alojan en GitHub.
+│   └── .secrets          # Claves de la API de Reddit
+│
+├── notebooks/            # Notebooks de Jupyter para el desarrollo de modelos
+├── datasets/             # Conjuntos de datos usados para entrenamiento/evaluación
+├── log/                  # Aquí se generarán las salidas
+│
+├── env-setup.sh          # Script para instalar dependencias y configurar el entorno
+├── package.json          # Configuración y dependencias del proyecto Node.js
+├── .gitignore            # Reglas de exclusión de Git
+└── README.md             # Documentación del proyecto
+```
+
