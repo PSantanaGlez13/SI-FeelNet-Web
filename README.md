@@ -30,6 +30,10 @@ Include all the files from the following link in `src/models` (you will need to 
 
 ### Reddit API
 You need to get a `client ID` and a `client secret` from the Reddit API by registering an application. Create the file `src/.secrets` and include them in the following format:
+```
+client_id=valor
+client_secret=valor
+```
 
 ## Repository Structure
 ```text
@@ -37,6 +41,7 @@ You need to get a `client ID` and a `client secret` from the Reddit API by regis
 ├── src/                  # Server source code and HTML pages   
 │   └── web/              # Static assets for the web page (img and ts)
 │   └── models/           # Models used for inference. Not hosted on github.
+│   └── .secrets          # Reddit API keys
 │
 ├── notebooks/            # Jupyter notebooks for model development
 ├── datasets/             # Datasets used for training/evaluation
