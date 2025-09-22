@@ -1,6 +1,8 @@
 # Intelligent Systems - Feelnet
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/blob/main/README.md)
 [![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/blob/main/README.es.md)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 
 ## 2024-2025 Academic Year ~ ULL
 ## Created by:
@@ -52,3 +54,9 @@ client_secret=valor
 ├── .gitignore            # Git ignore rules
 └── README.md             # Project documentation
 ```
+
+## License
+
+This project is licensed under the **CC BY-NC 4.0** license.  
+Non-commercial use only. For commercial use, please contact jrmorecam@gmail.com.
+
