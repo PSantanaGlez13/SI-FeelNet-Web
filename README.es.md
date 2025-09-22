@@ -1,5 +1,7 @@
 # Sistemas Inteligentes - Feelnet
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/PSantanaGlez13/SI-FeelNet-Web/blob/main/README.md)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 ## Curso 2024-2025 ULL
 ## Creado por:
 - Pablo Santana González ([@PSantanaGlez13](https://github.com/PSantanaGlez13))
@@ -51,3 +53,11 @@ client_secret=valor
 └── README.md             # Documentación del proyecto
 ```
 
+## Licencia
+
+Este proyecto está bajo la licencia **Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0)**.  
+Puede ser usado libremente para fines personales, académicos o de investigación.  
+
+No está permitido el uso comercial. Para uso comercial, por favor contacte a [your.email@example.com].
+
+Texto completo de la licencia: [https://creativecommons.org/licenses/by-nc/4.0/legalcode](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
