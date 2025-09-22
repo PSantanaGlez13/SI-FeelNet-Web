@@ -58,6 +58,6 @@ client_secret=valor
 Este proyecto está bajo la licencia **Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0)**.  
 Puede ser usado libremente para fines personales, académicos o de investigación.  
 
-No está permitido el uso comercial. Para uso comercial, por favor contacte a [your.email@example.com].
+No está permitido el uso comercial. Para uso comercial, por favor contacte a jrmorecam@gmail.com.
 
 Texto completo de la licencia: [https://creativecommons.org/licenses/by-nc/4.0/legalcode](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
